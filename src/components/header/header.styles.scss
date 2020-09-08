@@ -1,24 +1,24 @@
-.Header {
+.header {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
 
-  .LogoContainer {
+  .logo-container {
     height: 100%;
     width: 70px;
     padding: 25px;
   }
 
-  .Options {
+  .options {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
-    .Option {
+    .option {
       padding: 10px 15px;
       cursor: pointer;
     }
