@@ -1,11 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import classes from "./menu-item.module.scss";
+import "./menu-item.styles.scss";
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
-  const classesArray = [classes.menuitem];
+  const classesArray = ["menu-item"];
   if (size) {
-    classesArray.push(classes.menuitemlarge);
+    classesArray.push("menu-item-large");
   }
   return (
     <div
@@ -13,14 +13,14 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
-        className={classes.backgroundimage}
+        className="background-image"
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       ></div>
-      <div className={classes.content}>
-        <h1 className={classes.title}>{title.toUpperCase()}</h1>
-        <span className={classes.subtitle}>SHOW NOW</span>
+      <div className="content">
+        <h1 className="title">{title.toUpperCase()}</h1>
+        <span className="subtitle">SHOW NOW</span>
       </div>
     </div>
   );
