@@ -2,6 +2,7 @@ import * as actionTypes from "./cart.types";
 
 const initialState = {
   isCartDropdownVisible: false,
+  cartItems: [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         isCartDropdownVisible: !state.isCartDropdownVisible,
+      };
+    case actionTypes.ADD_ITEM:
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.item],
       };
     default:
       return state;
