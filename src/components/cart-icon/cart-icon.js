@@ -2,14 +2,22 @@ import React from "react";
 import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { connect } from "react-redux";
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
+import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import "./cart-icon.styles.scss";
 
-const CartIcon = ({ onCartDropdownToggle }) => (
+const CartIcon = ({ onCartDropdownToggle, itemCount }) => (
   <div className="cart-icon" onClick={onCartDropdownToggle}>
     <ShoppingIcon className="shopping-icon" />
-    <span className="item-count">0</span>
+    <span className="item-count">{itemCount}</span>
   </div>
 );
+
+const mapStateToProps = (state) => {
+  console.log("i am remapping the state to props");
+  return {
+    itemCount: selectCartItemsCount(state),
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -17,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
