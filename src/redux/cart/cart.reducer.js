@@ -1,5 +1,5 @@
 import * as actionTypes from "./cart.types";
-import { addItemToCart, decreaseItem, increaseItem } from "./cart.utils";
+import { addItemToCart, decreaseItem } from "./cart.utils";
 
 const initialState = {
   isCartDropdownVisible: false,
