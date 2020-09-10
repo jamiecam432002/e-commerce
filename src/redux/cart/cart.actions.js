@@ -9,13 +9,20 @@ export const toggleCartHidden = () => {
 export const addItem = (item) => {
   return {
     type: actionTypes.ADD_ITEM,
-    item: item,
+    item,
+  };
+};
+
+export const decreaseItem = (item) => {
+  return {
+    type: actionTypes.DECREASE_ITEM,
+    item,
   };
 };
 
 export const clearItemFromCart = (item) => {
   return {
     type: actionTypes.CLEAR_ITEM_FROM_CART,
-    item: item,
+    item,
   };
 };

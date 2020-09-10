@@ -1,5 +1,5 @@
 import * as actionTypes from "./cart.types";
-import { addItemToCart } from "./cart.utils";
+import { addItemToCart, decreaseItem, increaseItem } from "./cart.utils";
 
 const initialState = {
   isCartDropdownVisible: false,
@@ -23,6 +23,12 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== action.item.id),
       };
+    case actionTypes.DECREASE_ITEM:
+      return {
+        ...state,
+        cartItems: decreaseItem(state.cartItems, action.item),
+      };
+
     default:
       return state;
   }
