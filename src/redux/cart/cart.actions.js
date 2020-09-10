@@ -12,3 +12,10 @@ export const addItem = (item) => {
     item: item,
   };
 };
+
+export const clearItemFromCart = (item) => {
+  return {
+    type: actionTypes.CLEAR_ITEM_FROM_CART,
+    item: item,
+  };
+};
