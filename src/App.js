@@ -2,12 +2,10 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shop/shop";
 import CheckoutPage from "./pages/checkout/checkout";
 import Signin from "./pages/signin/signin";
-
 import Header from "./components/header/header";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
