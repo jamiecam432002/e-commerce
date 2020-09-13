@@ -1,4 +1,4 @@
-Ecommerce sample application biult with React.js, hosted with Heroku
+Ecommerce sample application built with React.js, hosted with Heroku
 
 DEMO: 
 
